@@ -101,6 +101,112 @@ section:nth-of-type(1) article {
     /* display: flex, by default, makes things sit next to each other */
 
     display: flex;
-    
+}
+
+section:nth-of-type(2) article{
+    display: flex;
+
+    /* flex-direction lets you control which way the elements
+    stack - whether horizontally (row) or vertically (column) - or in reverse */
+
+    flex-direction: row-reverse;
+}
+
+section:nth-of-type(3) article {
+    display: flex;
+
+    /* justify-cotent allows you to content how elements 
+    are distributed in their parent
+    flex-start and flex-end are defined based on reading direction of the user's language 
+    - space-between puts an equal amount of space between the elements 
+    - space-around adds an equal amount of space on eiter side of each element
+    - space-evenly equally distributes the elements in the available space*/
+
+    justify-content: space-evenly;
+}
+
+section:nth-of-type(4) article {
+    display: flex;
+}
+
+/* you can tell the flexed elements to grow to take up the available space */
+
+section:nth-of-type(4) article div{
+
+    flex-grow: 1;
+}
+
+section:nth-of-type(4) article div:nth-of-type(2) {
+
+    /* tell the second div to take up twice as much space as the others */
+    flex-grow: 2;
+}
+
+ /****************************************
+         FLEXBOX NAV EXAMPLE 
+*****************************************/
+
+nav ul{
+    display: flex;
+
+    /* you can tell the content to wrap if it doesn't fit */
+
+
+    flex-wrap: wrap;
+  /* for text based nav, distribute the content evenly ...
+    justify-content: space evenly; */
+
+}
+
+nav li {
+    /* tell the list items to grow to fill the 
+    available space */
+    flex-grow: 1;
+
+    /* make the list items display flex so we can tell the a tags inside to fill up the space */
+
+    display: flex;
+}
+
+nav ul a {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+
+nav ul a:hover{
+    background-color: grey;
+}
+
+ /****************************************
+         MEDIA QUERIES 
+*****************************************/
+
+@media screen and (min-width:640px){
+    /*this media query applies at 640px and above */
+
+    .flexer {
+        display: flex;
+
+        /* gap can be used to put space between flexed elements */
+        gap: 1em;
+    }
+
+    main {
+        flex-grow: 3;
+        display: flex;
+        /* use justify content to spread out the flexbox
+        examples in main to take up the same amount of space
+        as the larger aside */
+
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    aside {
+        flex-grow: 1;
+    }
 
 }
